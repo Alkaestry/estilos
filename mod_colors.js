@@ -12,7 +12,7 @@ head.appendChild(scriptCP);
 
 // Modificaciones generales fijas:
   //cambiar el color morado de fondo por color negro:
-document.body.style.background="rgb(0,0,0)"
+document.body.style.background="rgb(0,0,0)";
   //cambiar los colores de los botones de "enviar" y "disponible":
 document.getElementsByClassName("btn")[0].style = 'background: rgba(255, 255, 255, 0); background-image: url("./gl/glyphs.png!120617083118"); background-repeat: repeat-x; background-position: 0 -97px;';
 document.getElementsByClassName("btn")[1].style = 'background: rgba(255, 255, 255, 0); background-image: url("./gl/glyphs.png!120617083118"); background-repeat: repeat-x; background-position: 0 -97px;';
@@ -37,3 +37,4 @@ function mod_colors()
 	//modificar el color de la lista de usuarios:
 	document.getElementsByClassName("pN")[2].style = "background: " + color_pN2 + "; background-image: url('./gl/glyphs.png!120617083118'); background-repeat: repeat-x; background-position: 0 -97px;";
 }
+// fin_función_aplicar_cambios.
