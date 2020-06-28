@@ -17,8 +17,9 @@ document.body.style.background="rgb(0,0,0)";
 document.getElementsByClassName("btn")[0].style = 'background: rgba(255, 255, 255, 0); background-image: url("./gl/glyphs.png!120617083118"); background-repeat: repeat-x; background-position: 0 -97px;';
 document.getElementsByClassName("btn")[1].style = 'background: rgba(255, 255, 255, 0); background-image: url("./gl/glyphs.png!120617083118"); background-repeat: repeat-x; background-position: 0 -97px;';
 
-// Modificando el contenido de la ventana HDB (Help), incluye la llamada a la funcion para "aplicar cambios":
-document.getElementById('HDB').innerHTML = '<div><input id="colorOT" type="color"> (Color área del chat)</input></br><input id="colorpN1" type="color"> (Color campo del texto)</input></br><input id="colorpN2" type="color"> (color lista de usuarios)</input></br><button onclick="mod_colors()">Aplicar colores</button></div>';
+// Modificando el contenido de la ventana HDB (Help), incluye la llamada a la funcion para "aplicar cambios", y la llamada a la funcion "cambiar nick":
+document.getElementById('HDB').innerHTML = '<div><input id="colorOT" type="color"> (Color área del chat)</input></br><input id="colorpN1" type="color"> (Color campo del texto)</input></br><input id="colorpN2" type="color"> (color lista de usuarios)</input></br><button onclick="mod_colors()">Aplicar colores</button></div></br></br><div>Cambiar de nick sin salir: <input type="text" style="background:#f8f8f8; box-shadow:1px 1px #888888;" id="cambioNick" value="Escribe el nick"> <button onclick="Entrada(cambioNick.value)">Cambiar</button></div>';
+
 
 // +función para aplicar cambios+:
 function mod_colors()
@@ -60,5 +61,28 @@ function mod_colorTexto()
 	IN.tBC();
 }
 //fin_funcion_del_boton_para_asignar_color...
+
+/*
+	FUNCION PARA EL CAMBIO RAPIDO DE NICK:
+*/
+function Entrada(nn)
+{
+	var pu=""; var nn;
+	au=rcUtil.trim(E.get(LDL.lDAU)); 
+	if(au.length>3&&au.indexOf("http://")!=0){ au="http://"+au; } 
+	if(pu.length>3&&pu.indexOf("http://")!=0){ pu="http://"+pu; } 
+	if(nn.length<1||nn.length>BL.nL||pu.length>BL.puL||au.length>BL.auL)
+	E.set(LDL.lDNN,nn); 
+	E.set(LDL.lDPU,pu); 
+	E.set(LDL.lDAU,au);
+	rcCookie.set("n",nn,365); 
+	rcCookie.set("pu",pu,365); 
+	rcCookie.set("au",au,365); 
+	LDL.warn(rcLn["LDC"]); 
+	if(LDL.o){ LDL.shOpts(); } 
+	E.hide(LDL.lDD); 
+	BL.nick=nn; 
+	BL.pu=pu; BL.au=au; BL.dE=false; LDL.aC(); 
+}
 
 
