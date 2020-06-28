@@ -36,8 +36,10 @@ function mod_colors()
 	document.getElementsByClassName("pN")[1].style = "background: " + color_pN1 + "; background-image: url('./gl/glyphs.png!120617083118'); background-repeat: repeat-x; background-position: 0 -97px;";
 	//modificar el color de la lista de usuarios:
 	document.getElementsByClassName("pN")[2].style = "background: " + color_pN2 + "; background-image: url('./gl/glyphs.png!120617083118'); background-repeat: repeat-x; background-position: 0 -97px;";
-	//modificando la clase .body:
+	//modificar la clase .body del color de otras ventanas:
 	document.getElementsByClassName("body")[2].style = "background: " + color_OT + "; background-image: url('./gl/glyphs.png!120617083118'); background-repeat: repeat-x; background-position: 0 -97px;";
+	document.getElementsByClassName("body")[3].style = "background: " + color_OT + "; background-image: url('./gl/glyphs.png!120617083118'); background-repeat: repeat-x; background-position: 0 -97px;";
+	document.getElementsByClassName("body")[4].style = "background: " + color_OT + "; background-image: url('./gl/glyphs.png!120617083118'); background-repeat: repeat-x; background-position: 0 -97px;";
 }
 // fin_función_aplicar_cambios.
 
